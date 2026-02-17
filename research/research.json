@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Reliable Machine Learning",
+    "desc": "Calibration, uncertainty, and robustness in safety-critical settings. We bridge theoretical guarantees with deployable methods.",
+    "image": "research1.png"
+  },
+  {
+    "title": "Edge Intelligence",
+    "desc": "Energy-aware inference pipelines, embedded sensing, and resource-adaptive orchestration for real-time systems.",
+    "image": "research2.png"
+  },
+  {
+    "title": "Human-AI Interaction",
+    "desc": "Interfaces, explanations, and decision support tools that allow humans to trust and steer AI safely.",
+    "image": "research3.png"
+  }
+]

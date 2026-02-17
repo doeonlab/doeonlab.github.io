@@ -1,0 +1,79 @@
+[
+  {
+    "year": 2018,
+    "title": "Generation, transport, and detection of valley-locked spin photocurrent in WSe2-graphene-Bi2Se3 heterostructures",
+    "authors": "S. Cha, M. Noh, J.-H. Kim, J. Son, H. Bae, D. Lee, H. Kim, J. Lee, H. Shin, S. Sim, S. Yang, S. Lee, W. Shim, C.-H. Lee, M.-H. Jo, J.-S. Kim, D. Kim, H. Choi",
+    "venue": "Nature Nanotechnology 13 (10), 910-914",
+    "thumb": "2018_generation_transport.png"
+  },
+  {
+    "year": 2019,
+    "title": "Thermionic transport across gold-graphene-WSe2 van der Waals heterostructures",
+    "authors": "M. G. Rosul, D. Lee, D. H. Olson, N. Liu, X. Wang, P. E. Hopkins, K. Lee, M. Zebarjadi",
+    "venue": "Science Advances 5 (11), eaax7827",
+    "thumb": "2019_thermionic_transport.jpeg"
+  },
+  {
+    "year": 2019,
+    "title": "Epitaxial growth and layer-transfer techniques for heterogeneous integration of materials for electronic and photonic devices",
+    "authors": "H. Kum, D. Lee, W. Kong, H. Kim, Y. Park, Y. Kim, Y. Baek, S.-H. Bae, K. Lee, J. Kim",
+    "venue": "Nature Electronics 2 (10), 439-450",
+    "thumb": "2019_epitaxial_growth.png"
+  },
+  {
+    "year": 2020,
+    "title": "Hetero-integration enables fast switching time-of-flight sensors for light detection and ranging",
+    "authors": "M. Park, Y. Baek, M. Dinare, D. Lee, K.-H. Park, J. Ahn, D. Kim, J. Medina, W. Choi, S. Kim, C. Zhou, J. Heo, K. Lee",
+    "venue": "Scientific Reports 10 (1), 1-8",
+    "thumb": "2020_hetero_integration.webp"
+  },
+  {
+    "year": 2021,
+    "title": "Efficient defect identification via oxide memristive crossbar array based morphological image processing",
+    "authors": "H.-S. Lee, Y. Baek, Q. Lin, J. M. Chen, M. Park, D. Lee, S. Kim, K. Lee",
+    "venue": "Advanced Intelligent Systems 3 (2), 2000202",
+    "thumb": "2021_efficient_defect.webp"
+  },
+  {
+    "year": 2021,
+    "title": "Opposite behavior of ultrafast dynamics of exciton shift and linewidth broadening in bilayer ReS2",
+    "authors": "S. Sim, H.-S. Shin, D. Lee, J. Lee, M. Cha, K. Lee, H. Choi",
+    "venue": "Physical Review B 103 (1), 014309",
+    "thumb": "2021_opposite_behavior.png"
+  },
+  {
+    "year": 2022,
+    "title": "Neuron-Inspired Time-of-Flight Sensing via Spike-Timing-Dependent Plasticity of Artificial Synapses",
+    "authors": "M. Park, Y. Yuan, Y. Baek, A. H. Jones, N. Lin, D. Lee, H.-S. Lee, S. Kim, J. C. Campbell, K. Lee",
+    "venue": "Advanced Intelligent Systems 4 (3), 2100159",
+    "thumb": "2022_neuron_inspired.webp"
+  },
+  {
+    "year": 2023,
+    "title": "Near-sensor computing-assisted simultaneous viral antigen and antibody detection via integrated label-free biosensors with microfluidics",
+    "authors": "B. Bae, Y. Baek, J. Yang, H. Lee, C. S. Sonnadara, S. Jung, M. Park, D. Lee, S. Kim, G. Giri, S. Shah, G. Yoo, W. A. Petri, K. Lee",
+    "venue": "InfoMat 5 (10), e12471",
+    "thumb": "2023_near_sensor.webp"
+  },
+  {
+    "year": 2023,
+    "title": "Quantized Neural Network via Synaptic Segregation Based on Ternary Charge-Trap Transistors",
+    "authors": "Y. Baek, B. Bae, J. Yang, D. Lee, H. S. Lee, M. Park, T. Kim, S. Kim, B. Park, G. Yoo, K. Lee",
+    "venue": "Advanced Electronic Materials 9 (11), 2300303",
+    "thumb": "2023_quantized_neural.webp"
+  },
+  {
+    "year": 2023,
+    "title": "Vertical full-colour micro-LEDs via 2D materials-based layer transfer",
+    "authors": "J. Shin, H. Kim, S. Sundaram, J. Jeong, B.-I. Park, C. S. Chang, J. Choi, T. Kim, M. Saravanapavanantham, K. Lu, S. Kim, J. M. Suh, K.-S. Kim, M.-K. Song, Y. Liu, K. Qiao, J.-H. Kim, Y. Kim, J.-H. Kang, J. Kim, D. Lee, J. Lee, J.-S. Kim, H.-E. Lee, H. Yeon, H.-S. Kum, S.-H. Bae, V. Bulović, K.-J. Yu, K. Lee, K. Chung, Y.-J. Hong, A. Ougazzaden, J. Kim",
+    "venue": "Nature 614 (7946), 81",
+    "thumb": "2023_vertical_full.png"
+  },
+  {
+    "year": 2024,
+    "title": "Meta Shack–Hartmann wavefront sensor with large sampling density and large angular field of view: phase imaging of complex objects",
+    "authors": "G.-H. Go, D. Lee, J. Oh, G. Song, D. Lee, M. Jang",
+    "venue": "Light: Science & Applications 13 (1), 187",
+    "thumb": "2024_meta_shack.png"
+  }
+]

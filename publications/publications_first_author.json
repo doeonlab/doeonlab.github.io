@@ -1,0 +1,72 @@
+[
+  {
+    "year": 2024,
+    "title": "Motion-free high-resolution on-chip microscopy using LED matrix",
+    "authors": "J. You, D. Lee, G. Song, C. Lee, M. Jang",
+    "venue": "Optics Express 32 (21), 36549-36562",
+    "thumb": "2024_motion_free.png"
+  },
+  {
+    "year": 2024,
+    "title": "Stereoscopic Artificial Compound Eyes for Spatiotemporal Perception and Cognition in 3D space via Edge Computing",
+    "authors": "B. Bae, D. Lee, M. Park, Y. Mu, Y. Baek, C. Shen, K. Lee",
+    "venue": "Science Robotics 9 (10)",
+    "thumb": "2024_stereoscopic_eyes.png"
+  },
+  {
+    "year": 2023,
+    "title": "Hetero-Integrated InGaAs Photodiode and Oxide Memristor-Based Artificial Optical Nerve for In-Sensor NIR Image Processing",
+    "authors": "B. Bae, M. Park, D. Lee, I. Sim, K. Lee",
+    "venue": "Advanced Optical Materials 11 (3), 2201905",
+    "thumb": "2023_optical_nerve.png"
+  },
+  {
+    "year": 2022,
+    "title": "In-sensor image memorization and encoding via optical neurons for bio-stimulus domain reduction toward visual cognitive processing",
+    "authors": "D. Lee, M. Park, Y. Baek, B. Bae, J. Heo, K. Lee",
+    "venue": "Nature Communications 13 (1), 5223",
+    "thumb": "2022_memorization_encoding.png"
+  },
+  {
+    "year": 2021,
+    "title": "Exciton-Dominated Ultrafast Optical Response in Atomically Thin PtSe2",
+    "authors": "S. Bae, S. Nah, D. Lee, M. Sajjad, N. Singh, K. M. Kang, S. Kim, G.-J. Kim, J. Kim, H. Baik, K. Lee, S. Sim",
+    "venue": "Small 17 (45), 2103400",
+    "thumb": "2021_optical_response.png"
+  },
+  {
+    "year": 2021,
+    "title": "Ultrahigh Deep-Ultraviolet Responsivity of a β-Ga2O3/MgO Heterostructure-Based Phototransistor",
+    "authors": "J. Ahn, J. Ma, D. Lee, Q. Lin, Y. Park, O. Lee, S. Sim, K. Lee, G. Yoo, J. Heo",
+    "venue": "ACS Photonics 8 (2), 557-566",
+    "thumb": "2021_ultraviolet_responsivity.png"
+  },
+  {
+    "year": 2020,
+    "title": "Role of weak interlayer coupling in ultrafast exciton-exciton annihilation in two-dimensional rhenium dichalcogenides",
+    "authors": "S. Sim, D. Lee, J. Lee, M. Cha, S. Cha, W. Heo, S. Cho, W. Shim, K. Lee, J. Yoo",
+    "venue": "Physical Review B 101 (17), 174309",
+    "thumb": "2020_interlayer_coupling.png"
+  },
+  {
+    "year": 2019,
+    "title": "Light Polarization-Controlled Conversion of Ultrafast Coherent–Incoherent Exciton Dynamics in Few-Layer ReS2",
+    "authors": "S. Sim, D. Lee, J. Lee, H. Bae, M. Noh, S. Cha, M. H. Jo, K. Lee, H. Choi",
+    "venue": "Nano Letters 19 (10), 7464-7469",
+    "thumb": "2019_light polarization.webp"
+  },
+  {
+    "year": 2018,
+    "title": "Ultrafast quantum beats of anisotropic excitons in atomically thin ReS2",
+    "authors": "S. Sim, D. Lee, T. Kim, S. Cha, J. Sung, S. Cho, W. Shim, M. Jo, H. Choi",
+    "venue": "Nature Communications 9, 351",
+    "thumb": "2018_quantum_beats.png"
+  },
+  {
+    "year": 2016,
+    "title": "Selectively tunable optical Stark effect of anisotropic excitons in atomically thin ReS2",
+    "authors": "S. Sim, D. Lee, S. Cha, C. Soh, J. Sung, M. Jo, H. Choi",
+    "venue": "Nature Communications 7, 13569",
+    "thumb": "2016_selectively_tunable.png"
+  }
+]

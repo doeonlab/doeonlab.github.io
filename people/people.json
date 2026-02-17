@@ -1,0 +1,112 @@
+{
+  "Faculty": [
+    {
+      "name": "Doeon Lee",
+      "title": "",
+      "affiliation": "",
+      "email": "doeonlab@gmail.com",
+      "interests": "Electrical and Electronic Engineering",
+      "photo": "doeon.png",
+      "website": ""
+    }
+  ],
+  "Post Doctors": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Ph.D Students": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Master Students": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Interns": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Academic Breaks": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Researcher": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Ph.D Alumni": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Master Alumni": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ],
+  "Former Members": [
+    {
+      "name": "",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "interests": "",
+      "photo": "",
+      "website": ""
+    }
+  ]
+}

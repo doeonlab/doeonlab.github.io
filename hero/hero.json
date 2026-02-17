@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Electronical & Engineering Lab",
+  "title": "Designing systems that connect theory with real-world impact.",
+  "lead": "We explore reliable, human-centered computation across sensing, learning, and deployment. Our work spans algorithms, prototypes, and field validation.",
+  "buttons": [
+    { "label": "Explore research", "href": "/research/", "variant": "primary" },
+    { "label": "See publications", "href": "/publications/", "variant": "ghost" }
+  ],
+  "meta": [
+    { "label": "Based in", "value": "Ansan, South Korea · Remote Collaborations" },
+    { "label": "Focus", "value": "Robust ML · Edge Systems · Human-AI" },
+    { "label": "Openings", "value": "PhD · MS · Visiting" }
+  ],
+  "slides": [
+    { "src": "about1.jpg", "alt": "Lab activity" },
+    { "src": "about2.jpg", "alt": "Research demo" },
+    { "src": "about3.jpg", "alt": "Team photo" }
+  ]
+}
