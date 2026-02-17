@@ -528,6 +528,40 @@ async function loadAbout() {
 
 loadAbout();
 
+async function loadContact() {
+  const target = document.querySelector("[data-contact]");
+  if (!target) return;
+
+  try {
+    const dataRes = await fetch("/contact/contact.json", { cache: "no-cache" });
+    if (!dataRes.ok) throw new Error("Failed to load contact/contact.json");
+    const data = await dataRes.json();
+
+    const title = target.querySelector("[data-contact-title]");
+    const body = target.querySelector("[data-contact-body]");
+    if (title) title.textContent = data.title || "";
+    if (body) {
+      const introLines = (data.intro || "").split("\\n").filter(Boolean);
+      const introHtml = introLines.map((line) => `<p class="body">${line}</p>`).join("");
+      const meta = Array.isArray(data.meta) ? data.meta : [];
+      const metaHtml = meta
+        .map((item) => `<div><span>${item.label || ""}</span> ${item.value || ""}</div>`)
+        .join("");
+      body.innerHTML = `
+        <div>
+          ${introHtml}
+          <div class="contact-meta">
+            ${metaHtml}
+          </div>
+        </div>
+      `;
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+loadContact();
 function initPeopleCarousel() {
   const track = document.querySelector("[data-people-carousel]");
   if (!track) return;
