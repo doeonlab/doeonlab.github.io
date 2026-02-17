@@ -468,6 +468,13 @@ h1 {
     font-size: 0.85rem;
     white-space: nowrap;
   }
+  #people-preview .people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #people-preview .person-card {
+    width: 100%;
+    max-width: none;
+  }
   .pub-item {
     flex-direction: column;
     align-items: flex-start;
@@ -525,6 +532,8 @@ h1 {
 .meta-row a {
   color: var(--accent-2);
   text-decoration: none;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .meta-row a:hover {
@@ -577,11 +586,22 @@ h1 {
   font-size: 1rem;
 }
 
+.person-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .person-info .meta-row {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
+}
+
+#people .person-card {
+  justify-items: center;
+  text-align: center;
 }
 
 .person-photo {
@@ -597,11 +617,17 @@ h1 {
 
 #people-preview .person-card {
   flex: 0 0 auto;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  justify-items: stretch;
+  text-align: left;
 }
 
 .people-arrows {
   display: flex;
   gap: 8px;
+  z-index: 2;
 }
 
 .people-arrow {
@@ -613,9 +639,33 @@ h1 {
   height: 34px;
   cursor: pointer;
   font-size: 1rem;
+  pointer-events: auto;
 }
 
 .people-arrow:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  #people-preview .people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 24px;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+  #people-preview .person-card {
+    width: 100%;
+    max-width: none;
+  }
+  #people-preview .person-photo {
+    max-width: 200px;
+  }
+  #people-preview .person-card {
+    padding: 8px;
+  }
+}
+#people .person-info {
+  align-items: center;
 }

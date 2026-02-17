@@ -535,7 +535,9 @@ function initPeopleCarousel() {
   const next = document.querySelector("[data-people-next]");
   if (!prev || !next) return;
 
-  const pageSize = Number(track.getAttribute("data-people-page")) || 3;
+  const basePageSize = Number(track.getAttribute("data-people-page")) || 3;
+  const isMobile = window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+  const pageSize = isMobile ? 2 : basePageSize;
   const cards = () => Array.from(track.querySelectorAll(".person-card"));
   let index = 0;
 
@@ -550,15 +552,43 @@ function initPeopleCarousel() {
 
   const pageCount = () => Math.max(1, Math.ceil(cards().length / pageSize));
 
-  prev.addEventListener("click", () => {
+  const goPrev = () => {
     const total = pageCount();
     index = (index - 1 + total) % total;
     renderPage();
-  });
-  next.addEventListener("click", () => {
+  };
+  const goNext = () => {
     const total = pageCount();
     index = (index + 1) % total;
     renderPage();
+  };
+
+  prev.addEventListener("click", goPrev);
+  next.addEventListener("click", goNext);
+  prev.addEventListener("touchstart", (e) => { e.preventDefault(); goPrev(); }, { passive: false });
+  next.addEventListener("touchstart", (e) => { e.preventDefault(); goNext(); }, { passive: false });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 40;
+
+  track.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchEndX = touchStartX;
+  }, { passive: true });
+
+  track.addEventListener("touchmove", (e) => {
+    touchEndX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", () => {
+    const delta = touchEndX - touchStartX;
+    if (Math.abs(delta) < swipeThreshold) return;
+    if (delta < 0) {
+      goNext();
+    } else {
+      goPrev();
+    }
   });
 
   renderPage();
