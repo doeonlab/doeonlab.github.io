@@ -480,6 +480,10 @@ h1 {
 
 .section-actions {
   margin: -6px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .text-link {
@@ -584,4 +588,34 @@ h1 {
   width: 100%;
   max-width: 240px;
   margin: 0 auto;
+}
+#people-preview .people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#people-preview .person-card {
+  flex: 0 0 auto;
+}
+
+.people-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.people-arrow {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.people-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }

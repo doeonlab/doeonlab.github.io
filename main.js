@@ -32,6 +32,7 @@ async function loadPeople() {
         target.innerHTML = renderPeopleGrid(items);
       }
     });
+    initPeopleCarousel();
   } catch (err) {
     console.error(err);
   }
@@ -526,3 +527,39 @@ async function loadAbout() {
 }
 
 loadAbout();
+
+function initPeopleCarousel() {
+  const track = document.querySelector("[data-people-carousel]");
+  if (!track) return;
+  const prev = document.querySelector("[data-people-prev]");
+  const next = document.querySelector("[data-people-next]");
+  if (!prev || !next) return;
+
+  const pageSize = Number(track.getAttribute("data-people-page")) || 3;
+  const cards = () => Array.from(track.querySelectorAll(".person-card"));
+  let index = 0;
+
+  const renderPage = () => {
+    const items = cards();
+    items.forEach((card, i) => {
+      const start = index * pageSize;
+      const end = start + pageSize;
+      card.style.display = i >= start && i < end ? "" : "none";
+    });
+  };
+
+  const pageCount = () => Math.max(1, Math.ceil(cards().length / pageSize));
+
+  prev.addEventListener("click", () => {
+    const total = pageCount();
+    index = (index - 1 + total) % total;
+    renderPage();
+  });
+  next.addEventListener("click", () => {
+    const total = pageCount();
+    index = (index + 1) % total;
+    renderPage();
+  });
+
+  renderPage();
+}

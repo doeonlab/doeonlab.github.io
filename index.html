@@ -22,8 +22,14 @@
 
     <section class="section" id="people-preview">
       <div class="section-title">People</div>
-      <div class="section-actions"><a href="/people/" class="text-link">View all members</a></div>
-      <div class="people" data-people-list data-limit="3"></div>
+      <div class="section-actions">
+        <a href="/people/" class="text-link">View all members</a>
+        <div class="people-arrows">
+          <button class="people-arrow" type="button" data-people-prev aria-label="Previous">←</button>
+          <button class="people-arrow" type="button" data-people-next aria-label="Next">→</button>
+        </div>
+      </div>
+      <div class="people" data-people-list data-people-carousel data-people-page="3"></div>
     </section>
   </main>
 
