@@ -75,5 +75,12 @@
     "authors": "G.-H. Go, <u><b>D. Lee</b></u>, J. Oh, G. Song, D. Lee, M. Jang",
     "venue": "Light: Science & Applications 13 (1), 187",
     "thumb": "2024_meta_shack.png"
-  }
+  },
+  {
+  "year": 2025,
+  "title": "Impact of System‐Model Mismatch in Fourier Ptychographic Microscopy",
+  "authors": "T. Yin, G. Song, <u><b>D. Lee</b></u>, J. Oh, M. Jang",
+  "venue": "Advanced Photonics Research 6 (12), e202500180",
+  "thumb": "2025_fpm_model_mismatch.png"
+}
 ]
