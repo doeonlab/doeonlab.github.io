@@ -68,11 +68,17 @@ body {
 main { padding: 40px 6vw 80px; position: relative; z-index: 1; }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: start;
-  padding: 40px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  padding: 40px 0 40px;
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 980px;
+  text-align: center;
 }
 
 .eyebrow {
@@ -83,9 +89,11 @@ main { padding: 40px 6vw 80px; position: relative; z-index: 1; }
 }
 
 h1 {
-  font-family: "IBM Plex Serif", serif;
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  margin: 12px 0 16px;
+  font-family: "Space Grotesk", "IBM Plex Serif", sans-serif;
+  font-size: clamp(0.78rem, 2.1vw, 2.2rem);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
 .lead {
@@ -136,9 +144,28 @@ h1 {
   flex-direction: column;
   gap: 12px;
   overflow: hidden;
-  align-self: start;
-  aspect-ratio: 4 / 3;
-  margin-top: 32px;
+  width: min(100%, 960px);
+  align-self: center;
+  aspect-ratio: 16 / 9;
+  margin-top: 0;
+  padding: 14px;
+}
+
+.hero-image-wrap {
+  width: 100%;
+  max-width: 461px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-slider-shell {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
 }
 
 .hero-slider {
@@ -156,7 +183,9 @@ h1 {
   display: flex;
   transition: transform 0.6s ease;
   width: 100%;
+  aspect-ratio: 2346 / 2039;
   flex: 1 1 auto;
+  margin: 0 auto;
 }
 
 .hero-slide {
@@ -175,6 +204,7 @@ h1 {
   height: 100%;
   object-fit: contain;
   object-position: center;
+  margin: 0 auto;
 }
 
 .hero-dots {
@@ -183,11 +213,50 @@ h1 {
   justify-content: center;
 }
 
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ink);
+  cursor: pointer;
+  z-index: 2;
+  line-height: 1;
+  font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+}
+
+.hero-nav-prev {
+  left: 6px;
+}
+
+.hero-nav-next {
+  right: 6px;
+}
+
+.hero-nav:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.eyebrow:empty,
+.lead:empty,
+.hero-actions:empty,
+.hero-meta:empty {
+  display: none;
+}
+
 .hero-dot {
   width: 8px;
   height: 8px;
   border-radius: 999px;
   background: #d7cbbf;
+  cursor: pointer;
 }
 
 .hero-dot.is-active {
@@ -214,6 +283,38 @@ h1 {
 .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .body { color: var(--muted); line-height: 1.7; }
 
+#about .section-title {
+  text-align: center;
+}
+
+#about .section-grid {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  gap: 14px;
+}
+
+#about .body {
+  margin: 0;
+  max-width: 76ch;
+  margin-inline: auto;
+  color: #4c4640;
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+  line-height: 1.9;
+  letter-spacing: 0.005em;
+}
+
+#about .body ul {
+  margin: 8px 0 0;
+  padding-left: 1.2rem;
+}
+
+#about .body li {
+  margin: 4px 0;
+  line-height: 1.55;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -234,13 +335,18 @@ h1 {
 #research .cards {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 22px;
 }
 
 #research .card {
-  height: 400px;
-  flex-direction: row;
-  gap: 18px;
-  align-items: center;
+  height: auto;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  overflow: hidden;
+  width: min(100%, 980px);
+  margin: 0;
 }
 
 .card {
@@ -266,10 +372,30 @@ h1 {
   font-size: 1.3em;
 }
 
+#research .card h3,
+#research .card p {
+  width: 100%;
+  margin: 0;
+}
+
+#research .card h3 {
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  line-height: 1.15;
+  max-width: 85ch;
+}
+
+#research .card p {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.7;
+  max-width: 85ch;
+}
+
 .research-thumb-wrap {
-  width: 40%;
-  flex: 0 0 40%;
-  height: auto;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 320px;
   border-radius: 12px;
   overflow: hidden;
   border: none;
@@ -279,7 +405,7 @@ h1 {
 
 .research-thumb {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -289,6 +415,23 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+@media (max-width: 640px) {
+  #research .card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .research-thumb-wrap {
+    width: 100%;
+    flex: 0 0 auto;
+    height: 240px;
+  }
+
+  .research-content {
+    width: 100%;
+  }
 }
 
 
@@ -372,7 +515,7 @@ h1 {
 }
 
 .pub-item .pub-title {
-  font-size: clamp(1.4rem, 2.4vw, 1.76rem);
+  font-size: clamp(0.98rem, 1.75vw, 1.22rem);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -611,10 +754,8 @@ h1 {
 }
 
 .person-info .meta-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+  display: block;
+  text-align: center;
 }
 
 #people .person-card {

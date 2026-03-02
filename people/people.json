@@ -2,10 +2,15 @@
   "Faculty": [
     {
       "name": "Doeon Lee",
-      "title": "",
+      "title": "Assistant Professor",
       "affiliation": "",
-      "email": "doeonlab@gmail.com",
-      "interests": "Electrical and Electronic Engineering",
+      "email": "leedoun [at] hanyang.ac.kr",
+      "education": [
+        "PhD: University of Virginia (2022)",
+        "MS: Yonsei University (2018)",
+        "BS: Yonsei University (2016)"
+      ],
+      "interests": "",
       "photo": "doeon.png",
       "website": ""
     }
@@ -16,6 +21,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -27,6 +33,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -38,6 +45,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -49,6 +57,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -60,6 +69,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -71,6 +81,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -82,6 +93,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -93,6 +105,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""
@@ -104,6 +117,7 @@
       "title": "",
       "affiliation": "",
       "email": "",
+      "education": [],
       "interests": "",
       "photo": "",
       "website": ""

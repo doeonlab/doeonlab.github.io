@@ -115,6 +115,14 @@ function renderPeopleGrid(items) {
   return items
     .filter(hasDisplayName)
     .map((person) => {
+      const formatLabeledMeta = (line) => {
+        const text = String(line || "").trim();
+        const match = text.match(/^(PhD|MS|BS)\s*:\s*(.+)$/i);
+        if (!match) return text;
+        const label = match[1];
+        return `<strong>${label}:</strong> ${match[2]}`;
+      };
+
       const rawPhoto = (person.photo || "").trim();
       const hasPhoto = Boolean(rawPhoto);
       const photoSrc = rawPhoto
@@ -129,8 +137,17 @@ function renderPeopleGrid(items) {
       const affiliation = person.affiliation
         ? `<div class="meta-row">${person.affiliation}</div>`
         : "";
-      const email = person.email
-        ? `<div class="meta-row"><a href="mailto:${person.email}">${person.email}</a></div>`
+      const emailValue = (person.email || "").trim();
+      const email = emailValue
+        ? (emailValue.includes("[at]") || emailValue.includes(" at ")
+            ? `<div class="meta-row"><strong>Email:</strong> ${emailValue}</div>`
+            : `<div class="meta-row"><strong>Email:</strong> <a href="mailto:${emailValue}">${emailValue}</a></div>`)
+        : "";
+      const education = Array.isArray(person.education)
+        ? person.education
+            .filter((line) => typeof line === "string" && line.trim())
+            .map((line) => `<div class="meta-row">${formatLabeledMeta(line)}</div>`)
+            .join("")
         : "";
       const interests = person.interests
         ? `<div class="meta-row">${person.interests}</div>`
@@ -146,6 +163,7 @@ function renderPeopleGrid(items) {
             <div class="name">${person.name}</div>
             ${title}
             ${affiliation}
+            ${education}
             ${email}
             ${interests}
             ${website}
@@ -214,6 +232,16 @@ function groupPublicationsByYear(firstPublications, coPublications) {
 }
 
 function renderPublicationGroups(groups) {
+  const formatVenue = (venueRaw) => {
+    const venue = String(venueRaw || "").trim();
+    if (!venue) return "";
+    const match = venue.match(/^(.*?)(\s+\d.*)$/);
+    if (!match) return `<strong>${venue}</strong>`;
+    const journal = match[1].trim();
+    const rest = match[2];
+    return `<strong>${journal}</strong>${rest}`;
+  };
+
   const placeholders = [
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='260' viewBox='0 0 420 260'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e8d6c2'/%3E%3Cstop offset='1' stop-color='%23d59b6a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='420' height='260' fill='url(%23g)' rx='18'/%3E%3Cpath d='M40 178c44-40 92-60 144-60 52 0 98 20 138 60' fill='none' stroke='%23b3422e' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='320' cy='90' r='26' fill='%231c5c4e'/%3E%3C/svg%3E",
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='260' viewBox='0 0 420 260'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23dfe9e3'/%3E%3Cstop offset='1' stop-color='%23a6cdbd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='420' height='260' fill='url(%23g)' rx='18'/%3E%3Cpath d='M70 190l70-80 70 60 80-90 60 80' fill='none' stroke='%231c5c4e' stroke-width='10' stroke-linecap='round'/%3E%3Ccircle cx='120' cy='90' r='22' fill='%23b3422e'/%3E%3C/svg%3E",
@@ -231,14 +259,14 @@ function renderPublicationGroups(groups) {
         const thumbSrc = thumb
           ? `/images/publications/${thumb}`
           : placeholders[(index + idx) % placeholders.length];
-        const meta = (item.venue || "").trim();
+        const meta = formatVenue(item.venue);
 
         const divider = idx === items.length - 1 ? "" : `<div class="pub-divider"></div>`;
         return `
           <article class="pub-item">
             <img class="pub-thumb" src="${thumbSrc}" alt="Publication thumbnail" />
             <div class="pub-content">
-              <div class="pub-title">${item.title}</div>
+              <div class="pub-title"><strong>${item.title}</strong></div>
               <div class="pub-authors">${item.authors}</div>
               <div class="pub-conf">${meta}</div>
             </div>
@@ -297,15 +325,12 @@ function renderResearchCards(items) {
       const imageBlock = image
         ? `<div class="research-thumb-wrap"><img class="research-thumb" src="/images/research/${image}" alt="${title}" /></div>`
         : "";
-      const contentClass = image ? "research-content" : "";
       return `
         <article class="card">
+          <h3>${title}</h3>
           ${imageBlock}
-          <div class="${contentClass}">
-            <h3>${title}</h3>
-            <p>${desc}</p>
-            ${tag}
-          </div>
+          <p>${desc}</p>
+          ${tag}
         </article>
       `;
     })
@@ -426,6 +451,8 @@ async function loadHero() {
     const metaWrap = target.querySelector("[data-hero-meta]");
     const slidesWrap = target.querySelector("[data-hero-slides]");
     const dotsWrap = target.querySelector("[data-hero-dots]");
+    const prevBtn = target.querySelector("[data-hero-prev]");
+    const nextBtn = target.querySelector("[data-hero-next]");
 
     if (eyebrow) eyebrow.textContent = data.eyebrow || "";
     if (title) title.textContent = data.title || "";
@@ -474,27 +501,91 @@ async function loadHero() {
         .map((_, idx) => `<span class="hero-dot${idx === 0 ? " is-active" : ""}"></span>`)
         .join("");
 
-      initHeroSlider(slidesWrap, dotsWrap);
+      dotsWrap.style.display = slides.length > 1 ? "flex" : "none";
+      if (prevBtn && nextBtn) {
+        const navDisplay = slides.length > 1 ? "grid" : "none";
+        prevBtn.style.display = navDisplay;
+        nextBtn.style.display = navDisplay;
+      }
+      initHeroSlider(slidesWrap, dotsWrap, prevBtn, nextBtn);
     }
   } catch (err) {
     console.error(err);
   }
 }
 
-function initHeroSlider(track, dotsWrap) {
+function initHeroSlider(track, dotsWrap, prevBtn, nextBtn) {
   const slides = Array.from(track.querySelectorAll(".hero-slide"));
   const dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
   if (!slides.length) return;
 
   let index = 0;
+  let timer = null;
+  const INTERVAL_MS = 4000;
+
   const setSlide = (next) => {
     index = (next + slides.length) % slides.length;
     track.style.transform = `translateX(-${index * 100}%)`;
     dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
   };
 
+  const goNext = () => setSlide(index + 1);
+  const goPrev = () => setSlide(index - 1);
+
+  const startAuto = () => {
+    if (slides.length <= 1) return;
+    if (timer) clearInterval(timer);
+    timer = setInterval(goNext, INTERVAL_MS);
+  };
+
   setSlide(0);
-  setInterval(() => setSlide(index + 1), 4000);
+  startAuto();
+
+  if (slides.length <= 1) return;
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      goPrev();
+      startAuto();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      goNext();
+      startAuto();
+    });
+  }
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => {
+      setSlide(dotIndex);
+      startAuto();
+    });
+  });
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const SWIPE_THRESHOLD = 36;
+
+  track.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchEndX = touchStartX;
+  }, { passive: true });
+
+  track.addEventListener("touchmove", (e) => {
+    touchEndX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", () => {
+    const delta = touchEndX - touchStartX;
+    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+    if (delta < 0) {
+      goNext();
+    } else {
+      goPrev();
+    }
+    startAuto();
+  });
 }
 
 loadHero();
@@ -519,7 +610,7 @@ async function loadAbout() {
     if (title) title.textContent = data.title || "";
     if (body) {
       const paragraphs = Array.isArray(data.paragraphs) ? data.paragraphs : [];
-      body.innerHTML = paragraphs.map((text) => `<p class=\"body\">${text}</p>`).join("");
+      body.innerHTML = paragraphs.map((text) => `<div class=\"body\">${text}</div>`).join("");
     }
   } catch (err) {
     console.error(err);

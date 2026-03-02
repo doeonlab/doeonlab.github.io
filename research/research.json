@@ -1,17 +1,18 @@
 [
   {
-    "title": "Reliable Machine Learning",
-    "desc": "Calibration, uncertainty, and robustness in safety-critical settings. We bridge theoretical guarantees with deployable methods.",
+    "title": "In-sensor neuromorphic computing",
+    "desc": "To overcome the <strong>severe latency and power constraints</strong> of traditional machine vision, our lab pioneers <strong>in-sensor neuromorphic computing</strong> by directly integrating sensing and computation at the pixel level. Instead of shuttling massive amounts of raw data to external processors, we embed analog computing circuits, event-driven architectures, and engineered optical elements-such as designed metasurfaces-right where photons are captured. This pixel-level convergence enables <strong>native, real-time visual processing</strong> directly within the sensor array, <strong>slashing data movement and energy consumption by orders of magnitude</strong> to build the ultra-low-power, highly responsive edge vision systems essential for next-generation autonomous robotics, edge AI, and smart IoT.",
     "image": "research1.png"
   },
   {
-    "title": "Edge Intelligence",
-    "desc": "Energy-aware inference pipelines, embedded sensing, and resource-adaptive orchestration for real-time systems.",
+    "title": "Metasurface optical encoder",
+    "desc": "Our research develops a highly versatile <strong>metasurface optical encoder</strong> engineered for computational optical sensing and advanced optical computing. By utilizing a customized random metasurface, we achieve a deterministic physical encoding that instantaneously transforms complex optical fields into expressive spatial speckle patterns. This encoding mechanism drives two primary applications. <strong>First, for computational optical sensing</strong>, the encoder captures hard-to-measure physical properties of light, such as multidimensional phase or spectral information. By combining the well-defined forward model of our metasurface with advanced computational reconstruction algorithms, we enable highly accurate retrieval of hidden physical states from simple intensity measurements. <strong>Second, for optical neural networks</strong>, the metasurface acts as a passive computational kernel that physically performs high-dimensional matrix multiplications. When integrated with event-driven neuromorphic sensors, this system selectively extracts essential features to drastically reduce data bandwidth, establishing an ultra-low-power paradigm for edge AI. Ultimately, our metasurface encoder provides a unified hardware platform that advances precision computational metrology and energy-efficient machine vision.",
     "image": "research2.png"
   },
   {
-    "title": "Human-AI Interaction",
-    "desc": "Interfaces, explanations, and decision support tools that allow humans to trust and steer AI safely.",
-    "image": "research3.png"
+    "title": "Heterogeneous integration",
+    "desc": "Another core research area of our lab is the <strong>heterogeneous integration</strong> of high-performance III-V compound semiconductors. While III-V materials possess exceptional optical and electrical properties, their physical integration with conventional silicon platforms or other foreign materials is fundamentally challenging due to structural mismatches. To overcome this limitation, we utilize <strong>epitaxial lift-off</strong> techniques to entirely detach micro- and nano-scale semiconductor thin films from their original growth substrates. We then employ advanced transfer printing and <strong>cold-weld bonding</strong> processes to seamlessly integrate these disparate materials onto target platforms, achieving breakthrough device performances without defect generation.\n\nThis sophisticated integration technology serves as a powerful foundation for realizing unprecedented optoelectronic devices. Specifically, by transferring III-V semiconductor thin films away from rigid platforms and onto polymer-based <strong>flexible substrates</strong>, we are pioneering the development of next-generation <strong>flexible optoelectronic devices</strong>. A prime example of this approach is the creation of aberration-free <strong>curved image sensors</strong> inspired by biological visual systems. Ultimately, by breaking the morphological and optical constraints of conventional planar hardware, we aim to deliver entirely new form factors for advanced robotics, wearable electronics, and biocompatible healthcare systems.",
+    "image": "research3_1.png"
   }
 ]
+  

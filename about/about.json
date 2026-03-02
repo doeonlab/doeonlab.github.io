@@ -1,7 +1,7 @@
 {
-  "title": "About",
+  "title": "About DOEON LAB",
   "paragraphs": [
-    "DOEON LAB investigates how intelligent systems can be reliable, interpretable, and scalable in the wild. We build the full stack: from theoretical foundations and algorithmic guarantees to embedded prototypes and longitudinal field studies.",
-    "Our lab values clean experimentation, open science, and fast translation to practice. We collaborate with healthcare institutions, civic agencies, and industry partners to ensure our research matters."
+    "<b>DOEON LAB</b> pioneers next-generation neuromorphic vision systems by seamlessly merging sensing, optical modulation, and computation. To enable ultra-low-power, real-time perception for edge AI and robotics, our core research focuses on <b>in-sensor computing</b> for eliminating data bottlenecks, <b>metasurface optical encoders</b> for advanced computational sensing, and <b>heterogeneous integration</b> of III-V semiconductors for novel flexible device form factors.",
+    "<b>Join Us!</b> We are actively looking for passionate individuals to join our journey. We warmly welcome <b>undergraduate students, MS/PhD candidates, and post-doctoral researchers</b> to pioneer the future of optoelectronics and machine vision with us. If you are interested in our research or potential opportunities, please feel free to contact us anytime at <b>leedoun [at] hanyang.ac.kr</b>."
   ]
 }
