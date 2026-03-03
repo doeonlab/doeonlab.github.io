@@ -287,6 +287,34 @@ h1 {
   text-align: center;
 }
 
+.hiring-notice {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  padding: 16px 18px;
+  text-align: left;
+  border: 1px solid #d8c6b8;
+  border-left: 5px solid var(--accent);
+  border-radius: 12px;
+  background: #fff9f4;
+  color: #3a332d;
+  line-height: 1.7;
+}
+
+.hiring-notice-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.hiring-notice p {
+  margin: 0;
+}
+
+.hiring-notice p + p {
+  margin-top: 6px;
+}
+
 #about .section-grid {
   grid-template-columns: 1fr;
   max-width: 900px;
