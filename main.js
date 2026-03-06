@@ -256,6 +256,15 @@ function renderPublicationGroups(groups) {
     "Epitaxial growth and layer-transfer techniques for heterogeneous integration of materials for electronic and photonic devices": "34.3",
     "Generation, transport, and detection of valley-locked spin photocurrent in WSe2-graphene-Bi2Se3 heterostructures": "38.3"
   };
+  const normalizeTitle = (text) =>
+    String(text || "")
+      .replace(/[‐‑‒–—]/g, "-")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+  const IMPACT_FACTORS_NORMALIZED = Object.fromEntries(
+    Object.entries(IMPACT_FACTORS).map(([title, value]) => [normalizeTitle(title), value])
+  );
 
   const formatVenue = (venueRaw) => {
     const venue = String(venueRaw || "").trim();
@@ -285,7 +294,7 @@ function renderPublicationGroups(groups) {
           ? `/images/publications/${thumb}`
           : placeholders[(index + idx) % placeholders.length];
         const meta = formatVenue(item.venue);
-        const ifValue = IMPACT_FACTORS[item.title];
+        const ifValue = IMPACT_FACTORS_NORMALIZED[normalizeTitle(item.title)];
         const ifBadge = ifValue ? `<span class="pub-if">IF ${ifValue}</span>` : "";
 
         const divider = idx === items.length - 1 ? "" : `<div class="pub-divider"></div>`;
