@@ -557,6 +557,24 @@ h1 {
 .pub-conf {
   color: #8b857f;
   font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.pub-if {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #f2b5b0;
+  background: linear-gradient(180deg, #fff5f4 0%, #ffe7e4 100%);
+  color: #c7251a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .pub-divider {

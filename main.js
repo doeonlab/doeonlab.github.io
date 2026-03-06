@@ -232,6 +232,31 @@ function groupPublicationsByYear(firstPublications, coPublications) {
 }
 
 function renderPublicationGroups(groups) {
+  const IMPACT_FACTORS = {
+    "Motion-free high-resolution on-chip microscopy using LED matrix": "3.2",
+    "Stereoscopic Artificial Compound Eyes for Spatiotemporal Perception and Cognition in 3D space via Edge Computing": "26.1",
+    "Hetero-Integrated InGaAs Photodiode and Oxide Memristor-Based Artificial Optical Nerve for In-Sensor NIR Image Processing": "8",
+    "In-sensor image memorization and encoding via optical neurons for bio-stimulus domain reduction toward visual cognitive processing": "16.6",
+    "Exciton-Dominated Ultrafast Optical Response in Atomically Thin PtSe2": "15.1",
+    "Ultrahigh Deep-Ultraviolet Responsivity of a β-Ga2O3/MgO Heterostructure-Based Phototransistor": "7.07",
+    "Role of weak interlayer coupling in ultrafast exciton-exciton annihilation in two-dimensional rhenium dichalcogenides": "4.03",
+    "Light Polarization-Controlled Conversion of Ultrafast Coherent–Incoherent Exciton Dynamics in Few-Layer ReS2": "9",
+    "Ultrafast quantum beats of anisotropic excitons in atomically thin ReS2": "11.9",
+    "Selectively tunable optical Stark effect of anisotropic excitons in atomically thin ReS2": "12.4",
+    "Meta Shack–Hartmann wavefront sensor with large sampling density and large angular field of view: phase imaging of complex objects": "20.6",
+    "Near-sensor computing-assisted simultaneous viral antigen and antibody detection via integrated label-free biosensors with microfluidics": "22.7",
+    "Quantized Neural Network via Synaptic Segregation Based on Ternary Charge-Trap Transistors": "6.2",
+    "Vertical full-colour micro-LEDs via 2D materials-based layer transfer": "50.5",
+    "Impact of System‐Model Mismatch in Fourier Ptychographic Microscopy": "3.9",
+    "Neuron-Inspired Time-of-Flight Sensing via Spike-Timing-Dependent Plasticity of Artificial Synapses": "6.8",
+    "Efficient defect identification via oxide memristive crossbar array based morphological image processing": "6.8",
+    "Opposite behavior of ultrafast dynamics of exciton shift and linewidth broadening in bilayer ReS2": "3.7",
+    "Hetero-integration enables fast switching time-of-flight sensors for light detection and ranging": "3.8",
+    "Thermionic transport across gold-graphene-WSe2 van der Waals heterostructures": "13.6",
+    "Epitaxial growth and layer-transfer techniques for heterogeneous integration of materials for electronic and photonic devices": "34.3",
+    "Generation, transport, and detection of valley-locked spin photocurrent in WSe2-graphene-Bi2Se3 heterostructures": "38.3"
+  };
+
   const formatVenue = (venueRaw) => {
     const venue = String(venueRaw || "").trim();
     if (!venue) return "";
@@ -260,6 +285,8 @@ function renderPublicationGroups(groups) {
           ? `/images/publications/${thumb}`
           : placeholders[(index + idx) % placeholders.length];
         const meta = formatVenue(item.venue);
+        const ifValue = IMPACT_FACTORS[item.title];
+        const ifBadge = ifValue ? `<span class="pub-if">IF ${ifValue}</span>` : "";
 
         const divider = idx === items.length - 1 ? "" : `<div class="pub-divider"></div>`;
         return `
@@ -268,7 +295,7 @@ function renderPublicationGroups(groups) {
             <div class="pub-content">
               <div class="pub-title"><strong>${item.title}</strong></div>
               <div class="pub-authors">${item.authors}</div>
-              <div class="pub-conf">${meta}</div>
+              <div class="pub-conf">${meta} ${ifBadge}</div>
             </div>
           </article>
           ${divider}
