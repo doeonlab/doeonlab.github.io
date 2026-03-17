@@ -3,6 +3,7 @@ const ROLE_ORDER = [
   "Post Doctors",
   "Ph.D Students",
   "Master Students",
+  "Undergraduate Students",
   "Interns",
   "Academic Breaks",
   "Researcher",
@@ -10,6 +11,25 @@ const ROLE_ORDER = [
   "Master Alumni",
   "Former Members"
 ];
+
+function formatRoleLabel(role) {
+  const text = String(role || "").trim();
+  if (!text) return "";
+
+  const words = text.split(/\s+/);
+  return words
+    .map((word, index) => {
+      if (/^[A-Z][a-z]?\.[A-Z][a-z]?$/.test(word) || /^[A-Z][a-z]?\.[A-Z][a-z]?\.$/.test(word)) {
+        return word;
+      }
+      const lower = word.toLowerCase();
+      if (index === 0) {
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      }
+      return lower;
+    })
+    .join(" ");
+}
 
 async function loadPeople() {
   const targets = document.querySelectorAll("[data-people-list]");
@@ -99,9 +119,10 @@ function renderGroupedPeople(groups) {
     const itemsToRender = namedItems;
     if (!itemsToRender.length) return;
     const gridClass = role === "Faculty" ? "people-grid single" : "people-grid";
+    const roleLabel = formatRoleLabel(role);
     html += `
       <div class="people-section">
-        <div class="section-title">${role}</div>
+        <div class="section-title">${roleLabel}</div>
         <div class="${gridClass}">
           ${renderPeopleGrid(itemsToRender)}
         </div>
@@ -128,8 +149,12 @@ function renderPeopleGrid(items) {
       const photoSrc = rawPhoto
         ? (rawPhoto.includes("/") ? rawPhoto : `/images/people/${rawPhoto}`)
         : "";
+      const photoClasses = ["person-photo"];
+      if ((person.photoPosition || "").trim().toLowerCase() === "top") {
+        photoClasses.push("pos-top");
+      }
       const avatar = hasPhoto
-        ? `<img class="person-photo" src="${photoSrc}" alt="${person.name}" />`
+        ? `<img class="${photoClasses.join(" ")}" src="${photoSrc}" alt="${person.name}" />`
         : `<div class="person-photo placeholder" aria-hidden="true"></div>`;
       const title = person.title
         ? `<div class="meta-row">${person.title}</div>`
