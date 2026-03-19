@@ -1,7 +1,7 @@
 {
   "Faculty": [
     {
-      "name": "Doeon Lee",
+      "name": "Do-Eon Lee",
       "title": "Assistant Professor",
       "affiliation": "",
       "email": "leedoun [at] hanyang.ac.kr",
@@ -53,7 +53,7 @@
   ],
   "Undergraduate Students": [
     {
-      "name": "Youngjoon Cho",
+      "name": "Young-Joon Cho",
       "title": "",
       "affiliation": "",
       "email": "dudwns3427@naver.com",
@@ -61,6 +61,16 @@
       "interests": "",
       "photo": "YoungJoon.jpg",
       "photoPosition": "top",
+      "website": ""
+    },
+    {
+      "name": "Han-Sang Wook",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "education": [],
+      "interests": "",
+      "photo": "SangWook Han.jpg",
       "website": ""
     }
   ],
