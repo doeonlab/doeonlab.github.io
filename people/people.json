@@ -11,7 +11,7 @@
         "BS: Yonsei University (2016)"
       ],
       "interests": "",
-      "photo": "doeon.png",
+      "photo": "Do-Eon Lee.png",
       "website": ""
     }
   ],
@@ -59,7 +59,7 @@
       "email": "dudwns3427@naver.com",
       "education": [],
       "interests": "",
-      "photo": "YoungJoon.jpg",
+      "photo": "Young-Joon Cho.jpg",
       "photoPosition": "top",
       "website": ""
     },
@@ -70,7 +70,18 @@
       "email": "jasonhis22@gmail.com",
       "education": [],
       "interests": "",
-      "photo": "SangWook Han.jpg",
+      "photo": "Han-Sang Wook.jpg",
+      "photoPosition": "top",
+      "website": ""
+    },
+    {
+      "name": "Dong-Uk Won",
+      "title": "",
+      "affiliation": "",
+      "email": "",
+      "education": [],
+      "interests": "",
+      "photo": "Dong-Uk Won.jpeg",
       "photoPosition": "top",
       "website": ""
     }
