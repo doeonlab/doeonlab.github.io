@@ -269,6 +269,7 @@ function renderPublicationGroups(groups) {
     "Ultrafast quantum beats of anisotropic excitons in atomically thin ReS2": "11.9",
     "Selectively tunable optical Stark effect of anisotropic excitons in atomically thin ReS2": "12.4",
     "Meta Shack–Hartmann wavefront sensor with large sampling density and large angular field of view: phase imaging of complex objects": "20.6",
+    "Beyond the Weak-Scattering Limit: Accurate Kramers-Kronig Phase Imaging of High-Contrast Reflective Surfaces via Pupil Modulation": "4.60",
     "Near-sensor computing-assisted simultaneous viral antigen and antibody detection via integrated label-free biosensors with microfluidics": "22.7",
     "Quantized Neural Network via Synaptic Segregation Based on Ternary Charge-Trap Transistors": "6.2",
     "Vertical full-colour micro-LEDs via 2D materials-based layer transfer": "50.5",
