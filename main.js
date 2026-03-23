@@ -295,6 +295,12 @@ function renderPublicationGroups(groups) {
   const formatVenue = (venueRaw) => {
     const venue = String(venueRaw || "").trim();
     if (!venue) return "";
+    const statusMatch = venue.match(/^(.*?),\s*(Submitted|Under Review|Accepted|In Press)$/i);
+    if (statusMatch) {
+      const journal = statusMatch[1].trim();
+      const status = statusMatch[2].trim();
+      return `<strong>${journal}</strong>, <em>${status}</em>`;
+    }
     const match = venue.match(/^(.*?)(\s+\d.*)$/);
     if (!match) return `<strong>${venue}</strong>`;
     const journal = match[1].trim();
